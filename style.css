@@ -1,0 +1,72 @@
+body {
+    font-family: "Arial", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #1a191b;
+}
+
+#difficulty-buttons {
+    margin-bottom: 20px;
+}
+
+#difficulty-buttons button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #ddd;
+    color: #333;
+    font-size: 16px;
+}
+
+#difficulty-buttons button.active {
+    background-color: #666;
+    color: white;
+}
+
+#sudoku-board {
+    color: black;
+    margin-bottom: 20px;
+    background-color: #add8e6;
+}
+
+#sudoku-board td {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border: 1px solid #000;
+    vertical-align: middle;
+    font-size: 20px;
+}
+
+#sudoku-counter {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 18px;
+    color: white;
+}
+
+#sudoku-board td:nth-child(3n),
+#sudoku-board td:nth-child(6n) {
+    border-right: 3px solid #000;
+}
+
+#sudoku-board tr:nth-child(3n),
+#sudoku-board tr:nth-child(6n) {
+    border-bottom: 3px solid #000;
+}
+
+#sudoku-board-wrapper {
+    display: block;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+#sudoku-board-wrapper.show {
+    opacity: 1;
+}
