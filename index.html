@@ -44,7 +44,6 @@
         background-color: #ffcccc;
       }
 
-      /* 3x3 bölge çerçevesi */
       .cell:nth-child(3n),
       .cell:nth-child(3n + 1),
       .cell:nth-child(3n + 2) {
@@ -62,7 +61,6 @@
     <div id="sudoku-board"></div>
 
     <script>
-      // Sudoku tahtası oluşturma
       const board = generateRandomBoard();
 
       const sudokuBoard = document.getElementById("sudoku-board");
@@ -79,7 +77,7 @@
 
           cell.addEventListener("click", () => {
             if (!cell.classList.contains("given")) {
-              const value = prompt("Enter a number (1-9):");
+              const value = prompt("sayi gir (1-9):");
               const num = parseInt(value);
               if (!isNaN(num) && num >= 1 && num <= 9) {
                 if (isValidMove(board, i, j, num)) {
