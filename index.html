@@ -85,10 +85,10 @@
                 if (isValidMove(board, i, j, num)) {
                   board[i][j] = num;
                   cell.textContent = num;
-                  cell.classList.remove("hata");
+                  cell.classList.remove("error");
                 } else {
                   alert("olmaz. duzgun sayi gir.");
-                  cell.classList.add("hata");
+                  cell.classList.add("error");
                 }
               } else {
                 alert("sayi gir sayi.");
@@ -132,10 +132,20 @@
         ];
 
         const shuffled = base.map((row) => row.slice());
-        for (let i = 0; i < 10; i++) {
-          shuffleArray(shuffled);
+        shuffleArray(shuffled.flat()); // Shuffle all numbers
+        for (let i = 0; i < 9; i += 3) {
+          for (let j = 0; j < 9; j += 3) {
+            const subgrid = shuffled
+              .slice(i, i + 3)
+              .map((row) => row.slice(j, j + 3));
+            shuffleArray(subgrid.flat());
+            for (let k = 0; k < 3; k++) {
+              for (let l = 0; l < 3; l++) {
+                shuffled[i + k][j + l] = subgrid[k][l];
+              }
+            }
+          }
         }
-
         return shuffled;
       }
 
