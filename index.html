@@ -57,7 +57,7 @@
         border-bottom: 2px solid #000;
       }
     </style>
-    <title>Sudoku Oyunu</title>
+    <title>Sudoku</title>
   </head>
   <body>
     <div id="sudoku-board"></div>
@@ -85,10 +85,10 @@
                 if (isValidMove(board, i, j, num)) {
                   board[i][j] = num;
                   cell.textContent = num;
-                  cell.classList.remove("error");
+                  cell.classList.remove("hata");
                 } else {
                   alert("olmaz. duzgun sayi gir.");
-                  cell.classList.add("error");
+                  cell.classList.add("hata");
                 }
               } else {
                 alert("sayi gir sayi.");
