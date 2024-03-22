@@ -12,15 +12,15 @@ const mediumBtn = document.getElementById("medium-btn");
 const hardBtn = document.getElementById("hard-btn");
 
 easyBtn.addEventListener("click", () => {
-    setDifficulty(25);
+    setDifficulty(32);
 });
 
 mediumBtn.addEventListener("click", () => {
-    setDifficulty(20);
+    setDifficulty(25);
 });
 
 hardBtn.addEventListener("click", () => {
-    setDifficulty(15);
+    setDifficulty(20);
 });
 
 function setDifficulty(numGiven) {
